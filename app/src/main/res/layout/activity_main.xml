@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="15dp"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/edtname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" name" />
+
+    <EditText
+        android:id="@+id/edtsurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=" surname" />
+
+    <Button
+        android:id="@+id/btnsubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text=" Submit " />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvstudentlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
