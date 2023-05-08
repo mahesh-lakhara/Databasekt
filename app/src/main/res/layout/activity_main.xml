@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="15dp"
     tools:context=".MainActivity">
 
 
@@ -13,21 +12,30 @@
         android:id="@+id/edtname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" name" />
+        android:layout_margin="10dp"
+        android:textSize="18dp"
+        android:hint=" Name" />
 
     <EditText
         android:id="@+id/edtsurname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" surname" />
+        android:textSize="18dp"
+        android:layout_margin="10dp"
+        android:hint=" SurName" />
 
-    <Button
-        android:id="@+id/btnsubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text=" Submit " />
+
+
+
+        <Button
+            android:id="@+id/btnsubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text=" Submit " />
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvstudentlist"
