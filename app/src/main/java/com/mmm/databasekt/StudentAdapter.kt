@@ -1,19 +1,22 @@
 package com.mmm.databasekt
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-class StudentAdapter(list: ArrayList<StudentModel>) : RecyclerView.Adapter<StudentAdapter.StudentHolder>() {
-    var list = list
+class StudentAdapter(click: (Int) -> Unit) : RecyclerView.Adapter<StudentAdapter.StudentHolder>() {
+    var click = click
+    lateinit var list : ArrayList<StudentModel>
+
     class StudentHolder(itemView: View) : ViewHolder(itemView){
         var id = itemView.findViewById<TextView>(R.id.txtId)
         var name = itemView.findViewById<TextView>(R.id.txtName)
         var Surname = itemView.findViewById<TextView>(R.id.txtSurname)
+        var delete = itemView.findViewById<ImageView>(R.id.delete)
 
     }
 
@@ -31,11 +34,18 @@ class StudentAdapter(list: ArrayList<StudentModel>) : RecyclerView.Adapter<Stude
        holder.id.text = list.get(position).id.toString()
        holder.name.text = list.get(position).name
        holder.Surname.text = list.get(position).surname
+
+        holder.delete.setOnClickListener {
+            click.invoke(list.get(position).id)
+        }
     }
 
     fun update(students: ArrayList<StudentModel>) {
         list = students
         notifyDataSetChanged()
+    }
 
+    fun setStudents(list: ArrayList<StudentModel>) {
+        this.list = list
     }
 }

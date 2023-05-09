@@ -55,5 +55,9 @@ class DBHelper(
         return studentlist
 
     }
+    fun deleteStudent(id: Int) {
+        var db = writableDatabase
+        db.delete(TABLE_NAME, "id=$id", null)
+    }
 
 }
